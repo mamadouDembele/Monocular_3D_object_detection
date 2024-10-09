@@ -24,3 +24,7 @@ colcon build --symlink-install --packages-select camera_detection_single_stage
 source install/setup.bash
 ros2 launch camera_detection_single_stage camera_detection_single_stage.launch.xml
 ```
+
+## Acknowledgement
+https://github.com/Owen-Liuyuxuan/ros2_vision_inference/tree/onnx
+https://github.com/ApolloAuto/apollo/tree/master/modules/perception
