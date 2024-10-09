@@ -26,5 +26,5 @@ ros2 launch camera_detection_single_stage camera_detection_single_stage.launch.x
 ```
 
 ## Acknowledgement
-https://github.com/Owen-Liuyuxuan/ros2_vision_inference/tree/onnx
-https://github.com/ApolloAuto/apollo/tree/master/modules/perception
+* https://github.com/Owen-Liuyuxuan/ros2_vision_inference/tree/onnx
+* https://github.com/ApolloAuto/apollo/tree/master/modules/perception
