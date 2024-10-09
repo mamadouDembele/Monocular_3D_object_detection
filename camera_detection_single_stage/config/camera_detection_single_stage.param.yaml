@@ -1,0 +1,12 @@
+/**:
+  ros__parameters:
+    confidence_threshold: 0.3
+    min_2d_height: 0.0
+    min_3d_height: 0.0
+    min_3d_width: 0.0
+    min_3d_length: 0.0
+    max_nr_iter: 10
+    learning_rate: 0.7
+    k_min_cost: 5.65685
+    eps_cost: 0.00001
+

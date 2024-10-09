@@ -1,0 +1,28 @@
+<launch>
+
+    <arg name="input_image_topic" default="/camera_front_center_wide/image_raw"/>
+    <arg name="input_camera_info_topic" default="/camera_front_center_wide/camera_info"/>
+    <arg name="debug" default="true" />
+
+    <node_container pkg="rclcpp_components" exec="component_container" name="camera_detection_component" namespace="" args="" output="both">
+        <composable_node pkg="camera_detection_single_stage" plugin="camera_detection_single_stage::CameraDetectionSingleStageNode" name="camera_detection_single_stage_component" namespace="perception">
+            <remap from="input/image" to="$(var input_image_topic)"/>
+            <remap from="input/camera_info" to="$(var input_camera_info_topic)"/>
+            <param from="$(find-pkg-share camera_detection_single_stage)/config/camera_detection_single_stage.param.yaml"/>
+            <param name="model_path" value="$(find-pkg-share camera_detection_single_stage)/model/monoflex_576_768_fp32_op.onnx"/>
+            <param name="sample_path" value="$(find-pkg-share camera_detection_single_stage)/model/example.png"/>
+            <param name="debug" value="$(var debug)"/>
+        </composable_node>
+    </node_container>
+
+   <!--  <node pkg="camera_detection_single_stage" exec="camera_detection_single_stage_node" name="camera_detection_single_stage_node" output="screen">
+        <remap from="input/image" to="$(var input_image_topic)"/>
+        <remap from="input/camera_info" to="$(var input_camera_info_topic)"/>
+        <param from="$(find-pkg-share camera_detection_single_stage)/config/camera_detection_single_stage.param.yaml"/>
+        <param name="model_path" value="$(find-pkg-share camera_detection_single_stage)/model/monoflex_576_768_fp32_op.onnx"/>
+        <param name="sample_path" value="$(find-pkg-share camera_detection_single_stage)/model/example.png"/>
+        <param name="debug" value="$(var debug)"/>
+    </node> -->
+
+</launch>
+
